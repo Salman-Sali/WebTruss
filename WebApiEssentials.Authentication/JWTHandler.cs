@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Security.Claims;
 
-namespace WebApiEssentials.Authentication
+namespace WebEssentials.Authentication
 {
     public class JWTHandler
     {

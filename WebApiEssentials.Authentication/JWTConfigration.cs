@@ -1,4 +1,4 @@
-﻿namespace WebApiEssentials.Authentication
+﻿namespace WebEssentials.Authentication
 {
     public class JWTConfigration
     {
