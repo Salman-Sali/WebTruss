@@ -4,8 +4,8 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Version>0.1.0</Version>
-		<Authors>WebTruss.Authentication</Authors>
+		<Version>0.1.1</Version>
+		<Authors>Salman Sali</Authors>
 		<PackageProjectUrl>https://webtruss.salmansali.com</PackageProjectUrl>
 	</PropertyGroup>
 
