@@ -25,7 +25,4 @@ jobs:
       run: dotnet pack --no-build --output nuget
 
     - name: Publish NuGet package
-      uses: nuget/actions/nuget-push@main
-      with:
-        api-key: ${{ secrets.NUGKEY }}
-        file: nuget/*.nupkg
+      run: dotnet nuget push nuget/*.nupkg --api-key ${{ secrets.NUGKEY }} --source https://api.nuget.org/v3/index.json
