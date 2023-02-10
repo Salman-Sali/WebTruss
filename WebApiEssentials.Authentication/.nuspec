@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package >
   <metadata>
-    <id>WebEssentials.Authentication</id>
+    <id>WebTruss.Authentication</id>
     <version>0.1.0</version>
     <authors>Salman Sali</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
