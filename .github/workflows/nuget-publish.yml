@@ -22,7 +22,7 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Pack NuGet package
-      run: dotnet pack --no-build --output nuget
+      run: dotnet pack --no-build --output nuget --configuration Release
 
     - name: Publish NuGet package
       run: dotnet nuget push nuget/*.nupkg --api-key ${{ secrets.NUGKEY }} --source https://api.nuget.org/v3/index.json
