@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Security.Claims;
 
-namespace WebEssentials.Authentication
+namespace WebTruss.Authentication
 {
     public class JWTHandler
     {

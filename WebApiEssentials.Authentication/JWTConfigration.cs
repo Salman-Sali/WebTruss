@@ -1,4 +1,4 @@
-﻿namespace WebEssentials.Authentication
+﻿namespace WebTruss.Authentication
 {
     public class JWTConfigration
     {

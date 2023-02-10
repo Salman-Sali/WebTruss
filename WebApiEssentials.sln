@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebEssentials.Authentication", "WebApiEssentials.Authentication\WebEssentials.Authentication.csproj", "{C3102607-87C4-4C02-ACE5-68ACE697D5BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTruss.Authentication", "WebApiEssentials.Authentication\WebTruss.Authentication.csproj", "{C3102607-87C4-4C02-ACE5-68ACE697D5BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
