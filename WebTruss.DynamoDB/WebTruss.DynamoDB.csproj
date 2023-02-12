@@ -7,6 +7,10 @@
 		<Version>0.1.1</Version>
 		<Authors>Salman Sali</Authors>
 		<PackageProjectUrl>https://webtruss.salmansali.com</PackageProjectUrl>
+		<PackageIcon>webtruss.jpg</PackageIcon>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<None Include="..\webtruss.jpg" Pack="true" PackagePath="\" />
+	</ItemGroup>
 </Project>
