@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTruss.Exceptions", "WebT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTruss.Response", "WebTruss.Response\WebTruss.Response.csproj", "{D0A9288B-FDB9-43D6-A529-456D704C636B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTruss.Validation", "WebTruss.Validation\WebTruss.Validation.csproj", "{2AD9C55A-BED5-42CA-B455-08B837F46265}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D0A9288B-FDB9-43D6-A529-456D704C636B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0A9288B-FDB9-43D6-A529-456D704C636B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0A9288B-FDB9-43D6-A529-456D704C636B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD9C55A-BED5-42CA-B455-08B837F46265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD9C55A-BED5-42CA-B455-08B837F46265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD9C55A-BED5-42CA-B455-08B837F46265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD9C55A-BED5-42CA-B455-08B837F46265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
