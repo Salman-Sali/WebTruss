@@ -21,14 +21,14 @@ namespace WebTruss.Exceptions
             HttpStatusCode = httpStatusCode;
         }
 
-        public static void ThrowInternalServerError(string message)
+        public static AppException InternalServerError(string message)
         {
-            throw new AppException(message, HttpStatusCode.InternalServerError);
+            return new AppException(message, HttpStatusCode.InternalServerError);
         }
 
-        public static void ThrowBadRequest(string message)
+        public static AppException BadRequest(string message)
         {
-            throw new AppException(message, HttpStatusCode.BadRequest);
+            return new AppException(message, HttpStatusCode.BadRequest);
         }
     }
 }
