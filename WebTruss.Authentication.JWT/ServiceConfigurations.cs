@@ -37,9 +37,9 @@ namespace WebTruss.Authentication.JWT
 
     public class ConfigureJwtBearerOptions : IConfigureNamedOptions<JwtBearerOptions>
     {
-        private readonly JWTConfiguration jwtConfig;
+        private readonly IJWTConfiguration jwtConfig;
 
-        public ConfigureJwtBearerOptions(JWTConfiguration myService)
+        public ConfigureJwtBearerOptions(IJWTConfiguration myService)
         {
             jwtConfig = myService;
         }
