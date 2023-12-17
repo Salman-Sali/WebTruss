@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-	  <Version>0.0.3</Version>
+	  <Version>0.0.4</Version>
 	  <Authors>Salman Sali</Authors>
 	  <PackageProjectUrl>https://github.com/Salman-Sali/WebTruss</PackageProjectUrl>
 	  <Description>JWT Authentication helpers</Description>
@@ -14,6 +14,7 @@
   <ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+	  <PackageReference Include="WebTruss.Aws.Configuration" Version="0.1.0" />
   </ItemGroup>
 
 </Project>

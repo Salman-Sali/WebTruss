@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using WebTruss.Aws.Configuration;
 
 namespace WebTruss.Authentication.JWT
 {
@@ -17,7 +18,7 @@ namespace WebTruss.Authentication.JWT
             if (provider.GetService<IJWTConfiguration>() == null)
             {
                 JWTConfiguration jwtConfiguration = new JWTConfiguration();
-                configuration.GetSection("JWTConfiguration").Bind(jwtConfiguration);
+                AwsLambdaConfigurator.Bind(jwtConfiguration, configuration);
                 services.AddSingleton<IJWTConfiguration>(jwtConfiguration);
             }
             services.AddAuthentication((x =>
