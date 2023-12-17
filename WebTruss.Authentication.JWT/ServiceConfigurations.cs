@@ -18,7 +18,7 @@ namespace WebTruss.Authentication.JWT
             {
                 JWTConfiguration jwtConfiguration = new JWTConfiguration();
                 configuration.GetSection("JWTConfiguration").Bind(jwtConfiguration);
-                services.AddSingleton(jwtConfiguration);
+                services.AddSingleton<IJWTConfiguration>(jwtConfiguration);
             }
             services.AddAuthentication((x =>
             {
