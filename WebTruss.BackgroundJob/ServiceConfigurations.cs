@@ -32,5 +32,15 @@ namespace WebTruss.BackgroundJob
 
             return services;
         }
+
+        public static IServiceCollection AddOutBoxInterceptor(this IServiceCollection services, DbContextOptionsBuilder options)
+        {
+            services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
+            var interceptor = services
+                .BuildServiceProvider()
+                .GetService<ConvertDomainEventsToOutboxMessagesInterceptor>();
+            options.AddInterceptors(interceptor!);
+            return services;
+        }
     }
 }
