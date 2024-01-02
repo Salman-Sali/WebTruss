@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EE0F0F55
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTruss.EntityFrameworkCore.Extensions", "WebTruss.EntityFrameworkCore.Extensions\WebTruss.EntityFrameworkCore.Extensions.csproj", "{2821DE9B-ACDD-46DE-A3C2-DC5E71BDD4E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTruss.Authentication.JWT", "WebTruss.Authentication.JWT\WebTruss.Authentication.JWT.csproj", "{E86360F7-B1A5-4292-AC84-DDA2B8406F1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTruss.Authentication.JWT", "WebTruss.Authentication.JWT\WebTruss.Authentication.JWT.csproj", "{E86360F7-B1A5-4292-AC84-DDA2B8406F1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTruss.DependencyInjection", "WebTruss.DependencyInjection\WebTruss.DependencyInjection.csproj", "{08A37B75-AA41-437E-9A86-0DFB146845A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTruss.DependencyInjection", "WebTruss.DependencyInjection\WebTruss.DependencyInjection.csproj", "{08A37B75-AA41-437E-9A86-0DFB146845A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTruss.BackgroundJob", "WebTruss.BackgroundJob\WebTruss.BackgroundJob.csproj", "{B63E3E20-8D66-45C3-B0F8-AF27DC68FF95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{08A37B75-AA41-437E-9A86-0DFB146845A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08A37B75-AA41-437E-9A86-0DFB146845A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08A37B75-AA41-437E-9A86-0DFB146845A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63E3E20-8D66-45C3-B0F8-AF27DC68FF95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63E3E20-8D66-45C3-B0F8-AF27DC68FF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63E3E20-8D66-45C3-B0F8-AF27DC68FF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63E3E20-8D66-45C3-B0F8-AF27DC68FF95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

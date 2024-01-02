@@ -5,7 +5,7 @@ namespace WebTruss.EntityFrameworkCore.Extensions.Pagination
 {
     public static class EntityFrameworkPaginationExtensions
     {
-        public static IOrderedQueryable<TSource> Order<TSource>(this IQueryable<TSource> source, string propertyName, bool useOrderBy, bool ascending, object comparer = null)
+        public static IOrderedQueryable<TSource> Order<TSource>(this IQueryable<TSource> source, string propertyName, bool useOrderBy, bool ascending, object? comparer = null)
         {
             IOrderedQueryable<TSource> query;
             Expression? property = null;

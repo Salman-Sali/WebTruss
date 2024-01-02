@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		
-		<Version>0.0.4</Version>
+		<Version>0.0.5</Version>
 		<Authors>Salman Sali</Authors>
 		<PackageProjectUrl>https://github.com/Salman-Sali/WebTruss</PackageProjectUrl>
 		<Description>Exception handler and some models</Description>
@@ -13,10 +13,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\WebTruss.Response\WebTruss.Response.csproj" />
+	  <PackageReference Include="WebTruss.Response" Version="0.0.4" />
 	</ItemGroup>
 
 </Project>
