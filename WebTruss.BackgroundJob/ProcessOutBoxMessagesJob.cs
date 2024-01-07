@@ -13,11 +13,11 @@ namespace WebTruss.BackgroundJob
     {
         private readonly IPublisher _publisher;
         private readonly IConfiguration configuration;
-        private readonly IOutBoxDbContext dbContext;
+        private readonly OutBoxDbContext dbContext;
 
         public ProcessOutBoxMessagesJob(IPublisher publisher,
             IConfiguration configuration,
-            IOutBoxDbContext dbContext)
+            OutBoxDbContext dbContext)
         {
             _publisher = publisher;
             this.configuration = configuration;

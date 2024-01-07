@@ -15,16 +15,15 @@ namespace WebTruss.BackgroundJob
                 return base.SavingChangesAsync(eventData, result, cancellationToken);
             }
 
-            var outBoxMessages = dbContext
+            var domainEvents = dbContext
                 .ChangeTracker
                 .Entries<IHaveEvents>()
                 .Select(x => x.Entity)
-                .SelectMany(x =>
-                {
-                    var domainEvents = x.DomainEvents;
-                    x.DomainEvents.Clear();
-                    return domainEvents;
-                })
+                .Select(x => x.DomainEvents)
+                .ToList();
+
+            var outBoxMessages = domainEvents
+                .SelectMany(x => x)
                 .Select(x => new OutBoxMessage
                 {
                     Id = Guid.NewGuid(),
@@ -38,6 +37,8 @@ namespace WebTruss.BackgroundJob
                         })
                 })
                 .ToList();
+
+            domainEvents.ForEach(x => x.Clear());
 
             dbContext.Set<OutBoxMessage>().AddRange(outBoxMessages);
 

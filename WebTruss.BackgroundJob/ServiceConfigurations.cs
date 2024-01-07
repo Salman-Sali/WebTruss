@@ -33,13 +33,44 @@ namespace WebTruss.BackgroundJob
             return services;
         }
 
-        public static IServiceCollection AddOutBoxInterceptor(this IServiceCollection services, DbContextOptionsBuilder options)
+        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<IServiceProvider, DbContextOptionsBuilder> options) where TContext : DbContext
         {
             services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
-            var interceptor = services
-                .BuildServiceProvider()
-                .GetService<ConvertDomainEventsToOutboxMessagesInterceptor>();
-            options.AddInterceptors(interceptor!);
+
+            services.AddDbContext<TContext>((sp, optionBuilder) =>
+            {
+                var interceptor = sp
+                    .GetService<ConvertDomainEventsToOutboxMessagesInterceptor>();
+                optionBuilder.AddInterceptors(interceptor!);
+                options(sp, optionBuilder);
+            });
+
+            services.AddDbContext<OutBoxDbContext>((sp, optionBuilder) =>
+            {
+                options(sp, optionBuilder);
+            });
+
+            return services;
+        }
+
+        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TContext : DbContext
+        {
+            services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
+
+            services.AddDbContext<TContext>((sp, optionBuilder) =>
+            {
+                var interceptor = sp
+                    .GetService<ConvertDomainEventsToOutboxMessagesInterceptor>();
+                optionBuilder.AddInterceptors(interceptor!);
+                options(optionBuilder);
+            });
+
+            services.AddDbContext<OutBoxDbContext>((sp, optionBuilder) =>
+            {
+                options(optionBuilder);
+            });
+
+
             return services;
         }
     }

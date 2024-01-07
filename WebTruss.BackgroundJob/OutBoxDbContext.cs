@@ -2,9 +2,8 @@
 
 namespace WebTruss.BackgroundJob
 {
-    public interface IOutBoxDbContext
+    public class OutBoxDbContext : DbContext, IOutBoxDbContext
     {
         public DbSet<OutBoxMessage> OutBoxMessages { get; set; }
-        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
