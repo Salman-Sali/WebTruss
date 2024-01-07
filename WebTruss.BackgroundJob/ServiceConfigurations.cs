@@ -7,11 +7,8 @@ namespace WebTruss.BackgroundJob
     public static class ServiceConfigurations
     {
         public static IServiceCollection AddOutBoxBackgroundJob(
-            this IServiceCollection services,
-            IOutBoxDbContext context)
+            this IServiceCollection services)
         {
-            services.AddSingleton(context);
-
             services.AddQuartz(configure =>
             {
                 if (true)
