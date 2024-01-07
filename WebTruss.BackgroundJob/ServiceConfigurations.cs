@@ -33,7 +33,7 @@ namespace WebTruss.BackgroundJob
             return services;
         }
 
-        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<IServiceProvider, DbContextOptionsBuilder> options) where TContext : DbContext
+        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<IServiceProvider, DbContextOptionsBuilder> options) where TContext : DbContext, IOutBoxDbContext
         {
             services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
 
@@ -53,7 +53,7 @@ namespace WebTruss.BackgroundJob
             return services;
         }
 
-        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TContext : DbContext
+        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TContext : DbContext, IOutBoxDbContext
         {
             services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
 
