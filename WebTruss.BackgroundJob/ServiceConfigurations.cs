@@ -6,7 +6,7 @@ namespace WebTruss.BackgroundJob
 {
     public static class ServiceConfigurations
     {
-        public static IServiceCollection AddOutBoxBackgroundJob(
+        private static IServiceCollection AddOutBoxBackgroundJob(
             this IServiceCollection services)
         {
             services.AddQuartz(configure =>
@@ -30,7 +30,7 @@ namespace WebTruss.BackgroundJob
             return services;
         }
 
-        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<IServiceProvider, DbContextOptionsBuilder> options) where TContext : DbContext, IOutBoxDbContext
+        public static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<IServiceProvider, DbContextOptionsBuilder> options) where TContext : DbContext, IOutBoxDbContext
         {
             services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
 
@@ -46,11 +46,13 @@ namespace WebTruss.BackgroundJob
             {
                 options(sp, optionBuilder);
             });
+
+            services.AddOutBoxBackgroundJob();
 
             return services;
         }
 
-        private static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TContext : DbContext, IOutBoxDbContext
+        public static IServiceCollection AddOutBoxInterceptedDbContext<TContext>(this IServiceCollection services, Action<DbContextOptionsBuilder> options) where TContext : DbContext, IOutBoxDbContext
         {
             services.AddScoped<ConvertDomainEventsToOutboxMessagesInterceptor>();
 
@@ -67,6 +69,7 @@ namespace WebTruss.BackgroundJob
                 options(optionBuilder);
             });
 
+            services.AddOutBoxBackgroundJob();
 
             return services;
         }
