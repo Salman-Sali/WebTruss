@@ -5,7 +5,7 @@ namespace WebTruss.Notifications
 {
     public static class ServiceConfiguration
     {
-        public static IServiceCollection AddServices(IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddWebTrussEmailServices(IServiceCollection services, IConfiguration configuration)
         {
             var emailConfigurationService = services
                 .BuildServiceProvider()
